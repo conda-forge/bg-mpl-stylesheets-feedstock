@@ -1,6 +1,6 @@
 {% set group = "Billingegroup" %}
 {% set name = "bg-mpl-stylesheets" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: http://github.com/{{ group }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 85d1204a2214af3f438dad6967ff43d0aa63e5a068a45189482486b6ff34fbbb
+  sha256: 055b14a3ed42f3417168d4b8c0c21d2af2965f3372ce00118e4f4fa31f4a131f
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -32,7 +32,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Defines a standardized matplotlib stylesheet for the Billinge Group'
+  summary: Defines a standardized matplotlib stylesheet for the Billinge Group
 
 extra:
   recipe-maintainers:
