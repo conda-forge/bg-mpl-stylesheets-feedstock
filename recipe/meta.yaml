@@ -1,6 +1,6 @@
 {% set group = "Billingegroup" %}
 {% set name = "bg-mpl-stylesheets" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: http://github.com/{{ group }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 85d1204a2214af3f438dad6967ff43d0aa63e5a068a45189482486b6ff34fbbb
+  sha256: 494864dfb20dd4bff5a0fd8012176c71053f80756baf1b60816eefc3fd076bb3
 
 build:
   noarch: python
