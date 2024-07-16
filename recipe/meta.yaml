@@ -1,40 +1,54 @@
-{% set group = "Billingegroup" %}
-{% set name = "bg-mpl-stylesheets" %}
-{% set version = "0.2.7" %}
+{%- set name = "bg_mpl_stylesheets" -%}
+{%- set version = "0.3.0" -%}
+{%- set sha256 = "091e40beeacf43d823ce4faa02db48d8b82c90eaeed30e99e0d45d3ea4dcaff9" -%}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://github.com/{{ group }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d319c97649861b55b67313938c6cccc131b0589d74ee2613154ff0b70447859f
+  url: https://pypi.io/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
+  preserve_egg_dir: true
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.10
+    - setuptools
     - pip
+
   run:
-    - python >=3.6
+    - python >=3.10
+    - setuptools
     - matplotlib-base
 
 test:
   imports:
-    - bg_mpl_stylesheet
+    - bg_mpl_stylesheets
+
+  requires:
+    - pytest
+    - flake8
+    - codecov
+    - coverage
+    - pytest-env
 
 about:
-  home: https://github.com/{{ group }}/{{ name }}
-  license: MIT
-  license_family: MIT
-  license_file: LICENSE.txt
-  summary: Defines a standardized matplotlib stylesheet for the Billinge Group
+  home: https://github.com/billingegroup/bg-mpl-stylesheets/
+  summary: A package for using Billinge group style files
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.rst
+  description: |
+    bg-mpl-stylesheets is a Python software package that creates a standardized matplotlib figure format. This includes specialized fonts, figure border, color cycle, tick parameters, and more.
+  doc_url: http://billingegroup.github.io/bg-mpl-stylesheets/
+  dev_url: https://github.com/billingegroup/bg-mpl-stylesheets/
 
 extra:
   recipe-maintainers:
     - sbillinge
-    - connorjbracy
