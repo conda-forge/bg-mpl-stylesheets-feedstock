@@ -6,7 +6,9 @@ import importlib
 from pathlib import Path
 
 if __name__ == "__main__":
-    # Default module to import for determining the test location
-
-    exit_code = pytest.main(["-v", "bg_mpl_stylesheets/tests"])
+    package_directory = 'bg_mpl_stylesheets'
+    module = importlib.import_module(package_directory)
+    module_path = Path(module.__file__).parent
+    test_location = module_path / 'tests'
+    exit_code = pytest.main([str(test_location), "-v"])
     assert exit_code == 0
