@@ -49,6 +49,12 @@ outputs:
     test:
       imports:
         - bg_mpl_stylesheets
+      requires:
+        - pytest
+        - flake8
+        - codecov
+        - coverage
+        - pytest-env
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
