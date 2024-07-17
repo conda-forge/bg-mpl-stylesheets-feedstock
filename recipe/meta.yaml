@@ -1,6 +1,6 @@
 {%- set name = "bg-mpl-stylesheets" -%}
-{%- set version = "0.3.0" -%}
-{%- set sha256 = "091e40beeacf43d823ce4faa02db48d8b82c90eaeed30e99e0d45d3ea4dcaff9" -%}
+{%- set version = "0.3.1" -%}
+{%- set sha256 = "b8c8ea85b6d3632383062096f8dae4c9d5a34452f314c384fbc6c71e36e16ca1" -%}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   preserve_egg_dir: true
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
