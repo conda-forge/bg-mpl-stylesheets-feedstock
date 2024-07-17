@@ -12,7 +12,7 @@ source:
 
 build:
   preserve_egg_dir: true
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -33,6 +33,12 @@ outputs:
     test:
       imports:
         - bg_mpl_stylesheets
+      requires:
+        - pytest
+        - flake8
+        - codecov
+        - coverage
+        - pytest-env
 
   - name: bg_mpl_stylesheets
     build:
@@ -43,13 +49,6 @@ outputs:
     test:
       imports:
         - bg_mpl_stylesheets
-
-  requires:
-    - pytest
-    - flake8
-    - codecov
-    - coverage
-    - pytest-env
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
