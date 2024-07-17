@@ -12,31 +12,49 @@ source:
 
 build:
   preserve_egg_dir: true
-  noarch: python
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
 
-requirements:
-  host:
-    - python >=3.10
-    - setuptools
-    - pip
+outputs:
+  - name: {{ name }}
+    build: 
+      script: python -m pip install --no-deps --ignore-installed .
+      noarch: python
 
-  run:
-    - python >=3.10
-    - setuptools
-    - matplotlib-base
+    requirements:
+      host:
+        - python >=3.10
+        - setuptools
+        - pip
+      run:
+        - python >=3.10
+        - setuptools
+        - matplotlib-base
+    
+    test:
+      imports:
+        - bg_mpl_stylesheets
+      requires:
+        - pytest
+        - flake8
+        - codecov
+        - coverage
+        - pytest-env
 
-test:
-  imports:
-    - bg_mpl_stylesheets
-
-  requires:
-    - pytest
-    - flake8
-    - codecov
-    - coverage
-    - pytest-env
+  - name: bg_mpl_stylesheets
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+    test:
+      imports:
+        - bg_mpl_stylesheets
+      requires:
+        - pytest
+        - flake8
+        - codecov
+        - coverage
+        - pytest-env
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
@@ -52,3 +70,4 @@ about:
 extra:
   recipe-maintainers:
     - sbillinge
+    - Sparks29032
