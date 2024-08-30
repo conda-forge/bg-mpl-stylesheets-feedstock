@@ -1,6 +1,5 @@
 {%- set name = "bg-mpl-stylesheets" -%}
-{%- set version = "0.3.2" -%}
-{%- set sha256 = "024057949fa4329733924eb6f903d12883a7bb859c3a6a1e99701bb110b9b706" -%}
+{%- set version = "0.4.0" -%}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +7,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 2a29fe5470c6afdee28642f6498fc51214fe68fc19c0e901279debcf123c11a9
 
 build:
-  preserve_egg_dir: true
   noarch: python
   number: 0
   script: python -m pip install --no-deps --ignore-installed .
