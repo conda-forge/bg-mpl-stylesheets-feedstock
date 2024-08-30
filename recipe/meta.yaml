@@ -1,5 +1,5 @@
 {%- set name = "bg-mpl-stylesheets" -%}
-{%- set version = "0.4.1" -%}
+{%- set version = "0.4.0rc1" -%}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
-  sha256: 35def9f9a62e90d0c730ba52d85e60713ab04a04a23bfeefa343dd721d3ff2a4
+  sha256: 897c9db57a78c2e30bfe8667a20630f3d60b941b9cf98a7d05bdcce57b4c559d
 
 build:
   noarch: python
