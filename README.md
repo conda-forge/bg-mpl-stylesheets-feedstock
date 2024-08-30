@@ -150,5 +150,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bobleesj](https://github.com/bobleesj/)
 * [@sbillinge](https://github.com/sbillinge/)
 
