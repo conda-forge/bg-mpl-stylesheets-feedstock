@@ -11,30 +11,29 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
     - python >=3.10
     - setuptools
+    - setuptools-git-versioning >=2.0
     - pip
 
   run:
     - python >=3.10
-    - setuptools
     - matplotlib-base
 
 test:
   imports:
     - bg_mpl_stylesheets
-
   requires:
+    - pip
     - pytest
-    - flake8
-    - codecov
-    - coverage
-    - pytest-env
+  commands:
+    - pip check
+    - pip list
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
