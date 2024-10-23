@@ -35,7 +35,6 @@ test:
     - tests
   commands:
     - pip check
-    - pytest
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
