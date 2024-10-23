@@ -33,7 +33,7 @@ test:
     - pytest
   commands:
     - pip check
-    - pip list
+    - pytest
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
