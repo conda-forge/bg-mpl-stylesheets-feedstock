@@ -31,6 +31,8 @@ test:
   requires:
     - pip
     - pytest
+  source_files:
+    - tests
   commands:
     - pip check
     - pytest
