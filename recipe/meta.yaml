@@ -1,5 +1,5 @@
 {%- set name = "bg-mpl-stylesheets" -%}
-{%- set version = "0.4.2" -%}
+{%- set version = "0.5.0" -%}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
-  sha256: a3bdbfd8ca74d9f25d7b96166a1c4a806e6e7ac79935008fbae71867b685e280
+  sha256: acf4f5460fbbd0278cd88e252b7557e9cc5882487e2c4aa4aac08a1f5ead2b26
 
 build:
   noarch: python
@@ -35,6 +35,7 @@ test:
     - tests
   commands:
     - pip check
+    - pytest
 
 about:
   home: https://github.com/billingegroup/bg-mpl-stylesheets/
