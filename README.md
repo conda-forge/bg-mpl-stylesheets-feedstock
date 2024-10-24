@@ -39,14 +39,14 @@ Current release info
 Installing bg-mpl-stylesheets
 =============================
 
-Installing `bg-mpl-stylesheets` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `bg-mpl-stylesheets` from the `conda-forge/label/bg-mpl-stylesheets_rc` channel can be achieved by adding `conda-forge/label/bg-mpl-stylesheets_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/bg-mpl-stylesheets_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `bg-mpl-stylesheets` can be installed with `conda`:
+Once the `conda-forge/label/bg-mpl-stylesheets_rc` channel has been enabled, `bg-mpl-stylesheets` can be installed with `conda`:
 
 ```
 conda install bg-mpl-stylesheets
@@ -61,26 +61,26 @@ mamba install bg-mpl-stylesheets
 It is possible to list all of the versions of `bg-mpl-stylesheets` available on your platform with `conda`:
 
 ```
-conda search bg-mpl-stylesheets --channel conda-forge
+conda search bg-mpl-stylesheets --channel conda-forge/label/bg-mpl-stylesheets_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search bg-mpl-stylesheets --channel conda-forge
+mamba search bg-mpl-stylesheets --channel conda-forge/label/bg-mpl-stylesheets_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search bg-mpl-stylesheets --channel conda-forge
+mamba repoquery search bg-mpl-stylesheets --channel conda-forge/label/bg-mpl-stylesheets_rc
 
 # List packages depending on `bg-mpl-stylesheets`:
-mamba repoquery whoneeds bg-mpl-stylesheets --channel conda-forge
+mamba repoquery whoneeds bg-mpl-stylesheets --channel conda-forge/label/bg-mpl-stylesheets_rc
 
 # List dependencies of `bg-mpl-stylesheets`:
-mamba repoquery depends bg-mpl-stylesheets --channel conda-forge
+mamba repoquery depends bg-mpl-stylesheets --channel conda-forge/label/bg-mpl-stylesheets_rc
 ```
 
 
