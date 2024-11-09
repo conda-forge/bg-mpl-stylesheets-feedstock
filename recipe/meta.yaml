@@ -16,19 +16,20 @@ build:
 
 requirements:
   host:
-    - python >=3.11
+    - {{ python_min }}
     - setuptools
     - setuptools-git-versioning >=2.0
     - pip
 
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - matplotlib-base
 
 test:
   imports:
     - bg_mpl_stylesheets
   requires:
+    - python {{ python_min }} 
     - pip
     - pytest
   source_files:
