@@ -1,13 +1,14 @@
-{%- set name = "bg-mpl-stylesheets" -%}
-{%- set version = "0.5.0" -%}
+{% set name = "bg-mpl-stylesheets" %}
+{% set version = "0.5.1" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
-  sha256: 9e244e0f1464ceab834b959704507f710d51743856cb26008873efe5ba9f1145
+  url: https://pypi.org/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
+  sha256: 152682a7354777a7b2af274dd644ffd9c79ba07485cda2c69298cd3cf80a9c5a
 
 build:
   noarch: python
@@ -16,19 +17,20 @@ build:
 
 requirements:
   host:
-    - python >=3.11
+    - python {{ python_min }}
     - setuptools
     - setuptools-git-versioning >=2.0
     - pip
 
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - matplotlib-base
 
 test:
   imports:
     - bg_mpl_stylesheets
   requires:
+    - python {{ python_min }} 
     - pip
     - pytest
   source_files:
