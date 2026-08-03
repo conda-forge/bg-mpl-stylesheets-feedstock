@@ -7,15 +7,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-0.6.0.tar.gz
+  url: https://pypi.org/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
   sha256: 8326ddfd0666817a2bb0af623a6ace25e0d926e70a91e52712aac06fdbd2ae6f
 
 build:
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
-  entry_points:
-    -  bg-mpl-stylesheets = bg-mpl-stylesheets.bg-mpl-stylesheets_app:main
 
 requirements:
   host:
