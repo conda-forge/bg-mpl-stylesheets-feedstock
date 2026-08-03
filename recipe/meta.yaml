@@ -1,19 +1,21 @@
 {% set name = "bg-mpl-stylesheets" %}
-{% set version = "0.5.1" %}
-{% set python_min = "3.11" %}
+{% set version = "0.6.0" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-{{ version }}.tar.gz
-  sha256: 152682a7354777a7b2af274dd644ffd9c79ba07485cda2c69298cd3cf80a9c5a
+  url: https://pypi.org/packages/source/b/bg_mpl_stylesheets/bg_mpl_stylesheets-0.6.0.tar.gz
+  sha256: 8326ddfd0666817a2bb0af623a6ace25e0d926e70a91e52712aac06fdbd2ae6f
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  entry_points:
+    -  bg-mpl-stylesheets = bg-mpl-stylesheets.bg-mpl-stylesheets_app:main
 
 requirements:
   host:
@@ -30,11 +32,13 @@ test:
   imports:
     - bg_mpl_stylesheets
   requires:
-    - python {{ python_min }} 
+    - python {{ python_min }}
     - pip
     - pytest
+
   source_files:
     - tests
+
   commands:
     - pip check
     - pytest
