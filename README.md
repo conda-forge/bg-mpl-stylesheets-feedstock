@@ -47,31 +47,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `bg-mpl-stylesheets` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install bg-mpl-stylesheets
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install bg-mpl-stylesheets
 ```
 
-It is possible to list all of the versions of `bg-mpl-stylesheets` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add bg-mpl-stylesheets
+# for installing globally
+pixi global install bg-mpl-stylesheets
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `bg-mpl-stylesheets` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search bg-mpl-stylesheets --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search bg-mpl-stylesheets --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search bg-mpl-stylesheets --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -83,6 +125,8 @@ mamba repoquery whoneeds bg-mpl-stylesheets --channel conda-forge
 # List dependencies of `bg-mpl-stylesheets`:
 mamba repoquery depends bg-mpl-stylesheets --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
